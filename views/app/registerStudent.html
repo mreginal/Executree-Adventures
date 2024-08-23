@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../../images/utils/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Executree Adventures</title>
+</head>
+
+<body>
+
+    <div class="sidebar-btn"></div>
+
+    <div class="screen">
+        <section class="container">
+            <div class="register">
+                <h1>PREENCHA COM OS DADOS</h1>
+                <div class="scrollable" id="register-data">
+                    <div class="data" >
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" required placeholder="Insira o nome completo do aluno">
+                        <br>
+                        <label for="birth">Data de Nascimento:</label>
+                        <input type="date" id="birthdate" required>
+                        <br>
+                        <label for="institution">Instituição:</label>
+                        <input type="text" id="escola" required placeholder="Insira o nome da escola">
+                        <br>
+                        <label for="occupation">Ano / Série:</label>
+                        <input type="text" id="anoSerie" required placeholder="Insira o ano e a série do aluno">
+                        <br>
+                        <label for="gender" >Gênero:</label>
+                        <div class="check">
+                            <input type="radio" name="sexo" id="gen-man">Masculino
+                            <input type="radio" name="sexo" id="gen-woman">Feminino
+                            <input type="radio" name="sexo" id="gen-null">Não declarar
+                        </div>
+                        <br>
+                        <label for="address">Cidade / Estado:</label>
+                        <input type="text" id="address" required placeholder="Insira a cidade e o estado em que você mora">
+                        <br>
+
+                    <div class="button-register">
+                        <div class="login-btn">
+                            <input type="button" value="Cadastrar" onclick="registrarAluno()">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+            <div id="register-data" class="scrollable"></div>
+        </section>
+    </div>
+
+
+    <script src="../../javascript/app/registerStudent.js"></script>
+    <script src="../../javascript/app/token.js"></script>
+    <script src="../../javascript/app/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/463abc3aab.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

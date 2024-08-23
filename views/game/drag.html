@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../../images/utils/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Executree Adventures</title>
+</head>
+<body>
+
+  <section class="screen">
+    <div class="container">
+      <div class="game-txt">
+        <h1>LEVE A GIRAFA GRANDE <br> À ÁRVORE GRANDE</h1>
+      </div>
+      <div class="giraffe" id="giraffe">
+        <div>
+          <img id="imagem1" src="../../images/animals/general animals/giraffe.png" draggable="true" ondragstart="drag(event)" class="draggable">
+          <img id="imagem2" src="../../images/animals/objects/tree.png" ondrop="drop(event, 'imagem2')" ondragover="allowDrop(event)" class="dropzone">
+        </div>
+        
+        <div>
+          <img id="imagem3" src="../../images/animals/general animals/giraffe.png" draggable="true" ondragstart="drag(event)" class="draggable">
+          <img id="imagem4" src="../../images/animals/objects/tree.png" ondrop="drop(event, 'imagem4')" ondragover="allowDrop(event)" class="dropzone">
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <script src="../../javascript/app/token.js"></script>
+  <script src="../../javascript/game/drag.js"></script>
+</body>
+</html>

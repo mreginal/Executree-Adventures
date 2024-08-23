@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../images/utils/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Executree Adventures</title>
+</head>
+
+<body>
+
+    <div class="sidebar-btn"></div>
+
+    <div class="screen">
+        <div class="container">
+            <div class="students-filter">
+                <label for="filterType">Pesquisa avançada:</label>
+
+                <input type="text" id="filterValue" placeholder="Pesquise aqui">
+                <button onclick="filtrarAlunosOrdemAlfabetica()" id="order-button">Ordernar por ordem alfabética</button>
+            </div>
+
+            <div id="container-students" class="scrollable">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/463abc3aab.js" crossorigin="anonymous"></script>
+    <script src="../../javascript/app/students.js"></script>
+    <script src="../../javascript/app/sidebar.js"></script>
+    <script src="../../javascript/app/token.js"></script>
+</body>
+
+</html>

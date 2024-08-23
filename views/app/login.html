@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../../images/utils/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Executree Adventures</title>
+</head>
+<body>
+        <section class="screen">
+            <div class="container">
+                <div class="data">
+                    <h1>LOGIN</h1>
+                    <label for="user">Email:</label>
+                    <input type="text" placeholder="exemplo@professor.com" id="email" required>
+                    
+                    <label for="password">Senha:</label>
+                    <input type="password" placeholder="*******" id="password" required>
+                </div>
+                <div class="buttons-login">
+                    <div class="login-btn">
+                        <input type="button" value="Login" onclick="login()">
+                        <input type="button" value="Cadastrar" onclick="window.location.href='register.html'">
+                    </div>
+                </div>
+                <div class="reset-a">
+                    <a href="#">Esqueceu sua senha? </a>
+                </div>
+            </div>
+        </section>
+
+    <!--JS-->
+    <script src ="../../javascript/app/login.js"></script>
+</body>
+</html>

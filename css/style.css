@@ -1,0 +1,848 @@
+@charset "UTF8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+/*CONFIGURAÇÕES GERAIS*/
+
+:root {
+    --color1: #FFFFFF;
+    --color2: #C6C5C5;
+    --color3: #8F8E8E;
+    --color4: #36a9e0;
+    --color5: #1d71b9;
+    --color6: #F22294;
+    --color7: #09980b;
+    --color8: #dbc716;
+    --color9: #F25D07;
+    --color10: #00ffff;
+    --color11: #EAE2BB;
+
+    --font: 'Montserrat', sans-serif;
+    --details: 'Fredoka', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font);
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../images/utils/background-forest.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.89;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 50vw;
+    background-color: rgba(255, 255, 255, 0.724);
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.container h1 {
+    font-family: var(--details);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: var(--color7);
+    font-weight: bolder;
+    margin: 15px 0px;
+}
+
+/*_____SIDEBAR_____*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100%;
+    width: 200px;
+    background-color:#36aae0d3;
+    color: var(--color1);
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    color: var(--color1);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.sidebar a i{
+    margin-right: 30px;
+}
+
+.sidebar a:hover {
+    background-color: var(--color5);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar img{
+    margin: 60px 0px 20px;
+    height: 200px;
+    align-self: center;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--color1);
+    color: var(--color4);
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1100;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+/*Botão de logout*/
+.logout-btn {
+    background: var(--color5);
+    color: var(--color1);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 40px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    align-self: center;
+}
+
+.logout-btn i {
+    margin-right: 10px;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+
+/*_____TELA DE LOGIN_____*/
+
+.data{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+}
+
+.data label{
+    margin: 10px 0px;
+}
+
+.data input{
+    background-color: var(--color1);
+    padding: 10px;
+    width: 35vw;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.data input::placeholder{
+    font-family: var(--font);
+}
+
+.login-btn input, #formEditUser button{
+    background-color: var(--color7);
+    font-family: var(--font);
+    font-size: 12px;
+    color: var(--color1);
+    font-weight: bolder;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    width: 150px;
+    margin-inline: 20px;
+    cursor: pointer;
+}
+
+.login-btn input:hover , #formEditUser button:hover{
+    background-color: var(--color9);
+}
+
+
+.reset-a {
+    text-align: center;
+    margin-top: 30px;
+    padding: 5px;
+}
+
+.reset-a a {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/*_____TELA DE CADASTRO_____*/
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register h1{
+    font-size: 30px;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-left: -50px;
+}
+
+.button-register{
+    display: flex;
+    justify-content: center;
+}
+
+/*_____TELA DE EDIÇÃO DE DADOS_____*/
+
+#formEditUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 40px;
+    font-family: var(--font);
+    width: 40vw;
+}
+
+#edit-h1{
+    font-size: 40px;
+}
+
+/*_____MENU_____*/
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.menu button {
+    background: var(--color4);
+    color: var(--color1);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 30px;
+    width: 35vw;
+    height: 15vh;
+    cursor: pointer;
+}
+
+.menu button:hover{
+    background: var(--color5);
+}
+
+/*_____SCROLLABE_____*/
+
+.scrollable{
+    width: 40vw;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.scrollable::-webkit-scrollbar{
+    width: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--color3);
+    border-radius: 10px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: var(--color1);
+    border-radius: 10px;
+}
+
+/*_____ALUNOS_____*/
+
+#container-students{
+    margin: 30px;
+}
+
+#order-button{
+    padding: 10px 20px;
+}
+
+.students-filter label{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.students-filter input {
+    background-color: var(--color1);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.students-filter input::placeholder{
+    font-family: var(--font);
+}
+
+.students-filter button {
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    background: var(--color4);
+    color: var(--color1);
+    font-family: var(--font);
+    font-weight: bolder;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.students-filter button:hover {
+    background: var(--color5);
+}
+
+/*Cadastrar um novo aluno*/
+
+#botaoCadastrar{
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--color7);
+    color: var(--color1);
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#botaoCadastrar:hover{
+    background: rgb(2, 108, 2);
+}
+
+.aluno {
+    border-bottom: 2px solid grey; 
+    padding: 8px; 
+    margin-top: 10px;
+    position: relative; 
+  }
+
+.botaoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute; 
+    margin-top: 10px;
+    top: 0; 
+    right: 0; 
+  }
+
+.botaoContainer button:hover{
+    animation: 1s pulse ease;
+}
+
+.botaoMeusAlunos {
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*_____TELA SOBRE_____*/
+
+#about, #credits{
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.594);
+    height: 100%;
+    width: 100%;
+    text-align: justify;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#about{
+    align-items: center;
+}
+
+#about h1, #credits h1{
+    font-size: 40px;
+}
+
+#about p{
+    text-indent: 50px;
+    font-size: 15px;
+    width: 90%;
+}
+
+#about label{
+    font-weight: bolder;
+}
+
+/*_____CRÉDITOS_____*/
+
+#credits{
+    padding-bottom: 50px;
+}
+
+#credits h3{
+    margin-left: 30px;
+}
+
+#credits p{
+    margin-left: 60px;
+    line-height: 5px;
+}
+
+#credits .logos-img{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+#logo-cognitive{
+    height: 200px;
+}
+
+#logo-ufcg, #logo-uepb{
+    height: 150px;
+}
+
+#logo-cs{
+    height: 120px;
+}
+
+
+
+/*RELATÓRIO*/
+
+.botaoHistorico{
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute; 
+    margin-top: 15px;
+    top: 0; 
+    right: 0; 
+}
+
+#report{
+    font-size: 40px;
+}
+
+/*_____TELA DE CAPÍTULOS_____*/
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.chapters, .chapters-init{
+    position: relative;
+    z-index: 2;
+    background: var(--color11);
+    border-radius: 15px;
+}
+
+.map, .chapters-init{
+    height: 500px;
+    width: 800px;
+    border: 6px solid var(--color11);
+    border-radius: 15px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.623);
+}
+
+.chapters-init{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chapters-init img{
+    height: 300px;
+}
+
+.chapters-init button{
+    background: var(--color7);
+    padding: 20px;
+    width: 150px;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    color: var(--color1);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: var(--details);
+    letter-spacing: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chapters-init button:hover{
+    background: var(--color5);
+    animation: 0.8s pulse ease;
+}
+
+.chapters-buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.chapters-buttons button:hover{
+    animation: 1s pulse ease;
+}
+
+.chapters-buttons img{
+    height: 100px;
+}
+
+/*Botões personalizados no mapa*/
+
+.left-btn, .top-btn, .bottom-btn, .right-btn{
+    z-index: 3;
+    position: absolute;
+}
+
+.left-btn{
+    left:38px;
+    bottom: 73px;
+}
+
+.top-btn{
+    top: 37px;
+    right: 296px;
+}
+
+.bottom-btn{
+    bottom: 93px;
+    left: 375px;
+}
+
+.right-btn{
+    bottom: 125px;
+    right: 10px;
+}
+
+#paint-btn{
+    background: var(--color9);
+    border: 5px solid rgb(207, 55, 0);
+}
+
+#listen-btn{
+    background: var(--color10);
+    border: 5px solid rgb(8, 124, 124);
+}
+
+#find-btn{
+    background: var(--color6);
+    border: 5px solid rgb(157, 3, 82);
+}
+
+#select-btn{
+    background: var(--color8);
+    border: 5px solid rgb(149, 149, 12);
+}
+
+/*_____TELAS DOS JOGOS_____*/
+
+/*______PINTAR_____*/
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game button {
+    background: var(--color4);
+    color: var(--color1);
+    width: 100px;
+    font-family: var(--font);
+    font-weight: bold;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game button:hover {
+    background: var(--color5);
+    animation: pulse 0.6s infinite;
+}
+
+#quest-img{
+    height: 200px;
+    width: 200px;
+}
+
+.game-txt h1 {
+    font-size: 30px;
+    font-family: var(--details);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color7);
+}
+
+.option{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 30px;
+}
+
+.tint{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tint img{
+    height: 100px;
+    width: 100px;
+}
+
+#img-atv{
+    height: 150px;
+    width: 150px;
+}
+
+.fun-animation{
+    animation: bounceIn 2s ease;
+}
+
+/*__________OUVIR__________*/
+
+.history-txt{
+    font-family: var(--details);
+    text-transform: uppercase;
+}
+
+.next a{
+    color: var(--color4);
+    font-size: 50px;
+}
+
+.next a:hover{
+    color: var(--color5);
+}
+
+.listen{
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: center;
+}
+
+.alternatives{
+    display: flex;
+}
+
+.animals{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animals img {
+    height: 150px;
+    width: 150px;
+}
+
+/*__________ENCONTRAR__________*/
+
+.turtles{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.turtles button{
+    height: 170px;
+    width: 170px;
+}
+
+.turtles img{
+    height: 150px;
+}
+
+/*_____ARRASTAR_____*/
+
+.giraffe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.giraffe img{
+    height: 100px;
+    cursor: pointer;
+}
+
+#imagem1, #imagem2{
+    height: 200px;
+}
+
+/*_____SELECIONAR_____*/
+
+#img-atv-g{
+    height: 200px;
+}
+
+.select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.select img{
+    cursor: pointer;
+}
+
+/*_____LIGAR_____*/
+
+.conect {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.image-box {
+    width: 150px;
+    height: 100px;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-box img{
+    height: 100px;
+    cursor: pointer;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#lineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+line {
+    stroke: var(--color5);
+    stroke-width: 5;
+}
+
+/*_____KEYFRAMES____*/
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

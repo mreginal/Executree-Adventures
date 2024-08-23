@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cognofauna</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a class="logo" href="main.html">COGNOFAUNA</a>
+    <nav class="navbar">
+        <p id="sair" onclick="apagarCookie()">Sair</p>
+    </nav>
+</header>
+
+  <section class="telas">
+    <div class="container-telas" id="container-telas-canvas">
+      <div class="telas-jogo">
+        <div class="instrucao-txt">
+          <h1>LIGUE CADA ANIMAL À SUA SOMBRA</h1>
+        </div>
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <script src="../javascript/animalSombra.js"></script>
+  <script src="../javascript/sair.js"></script>
+</body>
+</html>
