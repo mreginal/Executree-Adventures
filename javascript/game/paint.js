@@ -102,7 +102,4 @@ function redirecionarUsuario() {
     if (proximoCapitulo == "false") {
         window.location.href = '../app/menu.html'
     }
-    else {
-        window.location.href = '../game/paint-2.html'
-    }
 }

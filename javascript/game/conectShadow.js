@@ -41,8 +41,8 @@ function checkVariables() {
     clickedIndexes.forEach(function (index, i) {
         if (i % 2 === 1) { // Verifica os índices a cada par de elementos (conexão)
             let acerto = false;
-            if ((clickedIndexes[i - 1] === 1 && index === 4) ||
-                (clickedIndexes[i - 1] === 2 && index === 6) ||
+            if ((clickedIndexes[i - 1] === 1 && index === 6) ||
+                (clickedIndexes[i - 1] === 2 && index === 4) ||
                 (clickedIndexes[i - 1] === 3 && index === 5)) {
                 acerto = true;
             }
@@ -122,14 +122,4 @@ function calcularDiferencaTempo(inicioAtividade) {
     const agora = new Date();
     const diferencaTempoMilissegundos = agora - inicioAtividade;
     return Math.floor(diferencaTempoMilissegundos / 1000);
-}
-
-function redirecionarUsuario() {
-    const proximoCapitulo = localStorage.getItem('proximoCapitulo');
-    if (proximoCapitulo == "false") {
-        window.location.href = '../../views/app/menu.html';
-    }
-    else {
-        window.location.href = '../views/encontreTartaruga.html';
-    }
 }

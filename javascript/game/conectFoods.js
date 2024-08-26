@@ -41,9 +41,9 @@ function checkVariables() {
     clickedIndexes.forEach(function (index, i) {
         if (i % 2 === 1) { // Verifica os índices a cada par de elementos (conexão)
             let acerto = false;
-            if ((clickedIndexes[i - 1] === 1 && index === 4) ||
+            if ((clickedIndexes[i - 1] === 1 && index === 5) ||
                 (clickedIndexes[i - 1] === 2 && index === 6) ||
-                (clickedIndexes[i - 1] === 3 && index === 5)) {
+                (clickedIndexes[i - 1] === 3 && index === 4)) {
                 acerto = true;
             }
             console.log(`Conexão ${i / 2 + 1} - ${acerto ? 'Certo' : 'Errado'}`);

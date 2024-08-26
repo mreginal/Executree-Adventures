@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="../../images/utils/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <title>Executree Adventures</title>
+</head>
+<body>
+  <section class="screen">
+    <div class="container" id="container-telas-canvas">
+      <div class="game">
+        <div class="game-txt">
+          <h1>LIGUE CADA ANIMAL À SUA SOMBRA</h1>
+        </div>
+                
+        <div class="conect">
+          <div class="image-box" id="img1"><img src="../../images/animals/general animals/fish.png" alt="peixe"></div>
+          <div class="image-box" id="img2"><img src="../../images/animals/general animals/pork.png" alt="porco"></div>
+          <div class="image-box" id="img3"><img src="../../images/animals/general animals/rabbit.png" alt="coelho"></div>
+        </div>
+
+        <div class="conect">
+          <div class="image-box" id="img4"><img src="../../images/animals/shadow/pork-shadow.png" alt="sombra-porco"></div>
+          <div class="image-box" id="img5"><img src="../../images/animals/shadow/rabbit-shadow.png" alt="sombra-coelho"></div>
+          <div class="image-box" id="img6"><img src="../../images/animals/shadow/fish-shadow.png" alt="sombra-peixe"></div>
+        </div>
+
+        <svg id="lineCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:10000;"></svg>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="../../javascript/game/conectShadow.js"></script>
+</body>
+
+</html>

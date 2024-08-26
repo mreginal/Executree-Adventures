@@ -568,47 +568,35 @@ body {
 
 /*Botões personalizados no mapa*/
 
-.left-btn, .top-btn, .bottom-btn, .right-btn{
+#paint, #find, #listen, #select{
     z-index: 3;
     position: absolute;
 }
 
-.left-btn{
+#paint{
     left:38px;
     bottom: 73px;
-}
-
-.top-btn{
-    top: 37px;
-    right: 296px;
-}
-
-.bottom-btn{
-    bottom: 93px;
-    left: 375px;
-}
-
-.right-btn{
-    bottom: 125px;
-    right: 10px;
-}
-
-#paint-btn{
     background: var(--color9);
     border: 5px solid rgb(207, 55, 0);
 }
 
-#listen-btn{
+#find{
+    top: 37px;
+    right: 296px;
     background: var(--color10);
     border: 5px solid rgb(8, 124, 124);
 }
 
-#find-btn{
+#listen{
+    bottom: 93px;
+    left: 375px;
     background: var(--color6);
     border: 5px solid rgb(157, 3, 82);
 }
 
-#select-btn{
+#select{
+    bottom: 125px;
+    right: 10px;
     background: var(--color8);
     border: 5px solid rgb(149, 149, 12);
 }
