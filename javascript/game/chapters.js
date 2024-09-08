@@ -1,12 +1,20 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.querySelector('.chapters-init button');
     const chaptersSection = document.querySelector('.chapters-game');
     const chaptersInitSection = document.querySelector('.chapters-init');
 
-    startButton.addEventListener('click',function(){
+    if (localStorage.getItem('chapterStarted') === 'true') {
         chaptersSection.classList.remove('hidden');
         chaptersSection.classList.add('visible');
-        chaptersInitSection.style.display='none';
+        chaptersInitSection.style.display = 'none';
+    }
+
+    startButton.addEventListener('click', function() {
+        chaptersSection.classList.remove('hidden');
+        chaptersSection.classList.add('visible');
+        chaptersInitSection.style.display = 'none';
+        
+        localStorage.setItem('chapterStarted', 'true');
     });
 });
 
@@ -20,7 +28,8 @@ const chapters = {
 document.addEventListener('DOMContentLoaded', () => {
     for (let chapter in chapters) {
         if (localStorage.getItem(`chapter${chapter}`) === 'completed') {
-            document.getElementById(`chapter${chapter}`).classList.add('completed');
+            const chapterElement = document.getElementById(`chapter${chapter}`);
+            chapterElement.classList.add('completed');
         }
     }
 });
@@ -29,29 +38,14 @@ function startChapter(chapterNumber) {
     const currentChapter = chapters[chapterNumber];
     localStorage.setItem('currentChapter', chapterNumber);
 
-    let currentStageIndex = localStorage.getItem(`chapter${chapterNumber}_stage`) || 0;
+    let currentStageIndex = parseInt(localStorage.getItem(`chapter${chapterNumber}_stage`) || 0);
 
     if (currentStageIndex < currentChapter.length) {
         window.location.href = currentChapter[currentStageIndex];
     } else {
+        // Marcar o capítulo como concluído se todas as fases forem completadas
         localStorage.setItem(`chapter${chapterNumber}`, 'completed');
         localStorage.removeItem(`chapter${chapterNumber}_stage`);
-        window.location.href = 'index.html';
-    }
-}
-
-function completeStage() {
-    const currentChapter = localStorage.getItem('currentChapter');
-    let currentStageIndex = parseInt(localStorage.getItem(`chapter${currentChapter}_stage`) || 0);
-
-    currentStageIndex++;
-
-    if (currentStageIndex >= chapters[currentChapter].length) {
-        localStorage.setItem(`chapter${currentChapter}`, 'completed');
-        localStorage.removeItem(`chapter${currentChapter}_stage`);
-        window.location.href = 'index.html';
-    } else {
-        localStorage.setItem(`chapter${currentChapter}_stage`, currentStageIndex);
-        window.location.href = chapters[currentChapter][currentStageIndex];
+        window.location.href = 'chapters.html';
     }
 }

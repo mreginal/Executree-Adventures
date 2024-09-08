@@ -124,12 +124,7 @@ function calcularDiferencaTempo(inicioAtividade) {
     return Math.floor(diferencaTempoMilissegundos / 1000);
 }
 
-function redirecionarUsuario() {
-    const proximoCapitulo = localStorage.getItem('proximoCapitulo');
-    if (proximoCapitulo == "false") {
-        window.location.href = '../../views/app/menu.html';
-    }
-    else {
-        window.location.href = '../views/encontreTartaruga.html';
-    }
-}
+
+document.getElementById('btn-next-phase').addEventListener('click', function() {
+    completeStage();
+});

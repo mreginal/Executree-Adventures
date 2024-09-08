@@ -98,12 +98,6 @@ function enviarDadosParaServidor(idDoUsuario, nomeDoUsuario, corSelecionada, ace
 }
 
 
-function redirecionarUsuario() {
-    const proximoCapitulo = localStorage.getItem('proximoCapitulo');
-    if (proximoCapitulo == "false") {
-        window.location.href = '../app/menu.html'
-    }
-    else {
-        window.location.href = '../game/listen.html'
-    }
-}
+document.getElementById('btn-next-phase').addEventListener('click', function() {
+    completeStage();
+});

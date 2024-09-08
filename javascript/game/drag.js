@@ -110,15 +110,6 @@ function enviarDadosParaServidor(idDoUsuario, nomeDoUsario, resposta, acerto, di
     }
 }
 
-function redirecionarUsuario() {
-    const proximoCapitulo = localStorage.getItem('proximoCapitulo');
-    if (proximoCapitulo === "false") {
-        setTimeout(function() {
-            window.location.href = '../../views/app/menu.html';
-        }, 1000);
-    } else {
-        setTimeout(function() {
-            window.location.href = '../../views/game/select.html';
-        }, 1000);
-    }
-}
+document.getElementById('btn-next-phase').addEventListener('click', function() {
+    completeStage();
+});

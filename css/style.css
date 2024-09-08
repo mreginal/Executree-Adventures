@@ -566,6 +566,33 @@ body {
     height: 100px;
 }
 
+#btn-next-phase{
+    background: none; 
+    color: var(--color7); 
+    font-size: 20px;
+    position: fixed;
+    bottom: 80px;
+    border: none;
+    cursor: pointer;
+}
+
+.completed {
+    background-color: #e0ffe0;
+    color: #4caf50;
+    position: relative;
+}
+
+.completed::after {
+    content: '✔';
+    color: #4caf50;
+    font-size: 24px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
 /*Botões personalizados no mapa*/
 
 #paint, #find, #listen, #select{
@@ -717,12 +744,12 @@ body {
 }
 
 .turtles button{
-    height: 170px;
+    height: 150px;
     width: 170px;
 }
 
 .turtles img{
-    height: 150px;
+    height: 140px;
 }
 
 /*_____ARRASTAR_____*/

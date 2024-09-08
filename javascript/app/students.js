@@ -259,7 +259,7 @@ function criarDivAlunoComBotoes(aluno) {
         event.stopPropagation();
         localStorage.setItem('nomeDoUsuarioClicado', aluno.nome);
         localStorage.setItem('idDoUsuarioClicado', aluno._id);
-        window.location.href = '../app/chapters.html';
+        window.location.href = '../game/chapters.html';
     });
 
     botaoExcluir.addEventListener('click', async (event) => {

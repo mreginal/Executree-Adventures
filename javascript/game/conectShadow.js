@@ -123,3 +123,7 @@ function calcularDiferencaTempo(inicioAtividade) {
     const diferencaTempoMilissegundos = agora - inicioAtividade;
     return Math.floor(diferencaTempoMilissegundos / 1000);
 }
+
+document.getElementById('btn-next-phase').addEventListener('click', function() {
+    completeStage();
+});

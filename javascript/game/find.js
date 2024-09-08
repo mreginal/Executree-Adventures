@@ -125,14 +125,7 @@ async function resgatarDadosAluno() {
     }
 }
 
-function redirecionarUsuario() {
-    const proximoCapitulo = localStorage.getItem('proximoCapitulo');
-    if (proximoCapitulo == "false") {
-        window.location.href = '../../views/app/menu.html'
-    }
-    else {
-        window.location.href = '../../views/game/animals-q.html'
-    }
-}
-
+document.getElementById('btn-next-phase').addEventListener('click', function() {
+    completeStage();
+});
 
